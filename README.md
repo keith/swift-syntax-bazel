@@ -10,19 +10,15 @@ doesn't depend on the specific Xcode path (or version) of your users.
 1. Make sure you've setup
    [`rules_swift`](https://github.com/bazelbuild/rules_swift). Then add
    this to your `WORKSPACE`
-
 2. Go to the [releases
    page](https://github.com/keith/swift-syntax-bazel/releases) to grab
    the snippet for the Xcode version you want
-
-Then for your target that depends on `SwiftSyntax` add this to its deps:
+3. Add this target to your `deps`:
 
 ```bzl
-...
     deps = [
         "@com_github_keith_swift_syntax//:SwiftSyntax",
     ]
-...
 ```
 
 ## Details
