@@ -18,8 +18,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "com_github_keith_swift_syntax_bazel",
-    sha256 = "TODO",
-    url = "TODO",
+    sha256 = "0bb4a1d04b06481c7f2b7416b8f17b9d137e6a73e699dd0f161a26ae91bb4124",
+    strip_prefix = "swift-syntax-bazel-12.4.12D4e",
+    url = "https://github.com/keith/swift-syntax-bazel/archive/refs/tags/12.4.12D4e.tar.gz",
 )
 
 load("@com_github_keith_swift_syntax_bazel//:deps.bzl", "swift_syntax_deps")
