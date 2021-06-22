@@ -1,4 +1,5 @@
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("@com_github_keith_swift_syntax_bazel//:cc_import_workaround.bzl", "cc_import_workaround")
 
 cc_library(
     name = "_CSwiftSyntax",
@@ -9,9 +10,9 @@ cc_library(
     tags = ["swift_module"],
 )
 
-cc_import(
+cc_import_workaround(
     name = "library",
-    shared_library = "@com_github_keith_lib_internalswiftsyntaxparser//:library",
+    library = "@com_github_keith_lib_internalswiftsyntaxparser//:library",
 )
 
 swift_library(
