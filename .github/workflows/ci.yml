@@ -22,4 +22,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: test
-        run: CC=clang bazelisk test --build_tests_only //...
+        run: CC=clang bazelisk test --build_tests_only //test:swift_binary_test //test:swift_test
