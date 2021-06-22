@@ -1,0 +1,26 @@
+name: Bazel Build
+
+on: [pull_request]
+
+env:
+   DEVELOPER_DIR: /Applications/Xcode_12.5.app/Contents/Developer
+
+jobs:
+  macos-test:
+    name: macOS test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: test
+        run: bazelisk test //...
+  linux-test:
+    name: Linux test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: test
+        run: bazelisk test //...
