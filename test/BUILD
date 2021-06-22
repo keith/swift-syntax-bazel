@@ -31,6 +31,7 @@ swift_library(
 macos_unit_test(
     name = "macos_unit_test",
     minimum_os_version = "10.15",
+    target_compatible_with = ["@platforms//os:macos"],
     deps = ["macos_test_library"],
 )
 
@@ -53,4 +54,5 @@ sh_test(
     srcs = ["macos-binary-test.sh"],
     data = ["macos_binary"],
     tags = ["manual"],  # TODO: Currently broken
+    target_compatible_with = ["@platforms//os:macos"],
 )
