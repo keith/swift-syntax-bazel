@@ -5,7 +5,7 @@ on: [pull_request]
 jobs:
   macos-test:
     name: macOS test
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v1
       - name: Select Xcode 12.5
