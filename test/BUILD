@@ -30,6 +30,7 @@ swift_test(
 swift_binary(
     name = "swift_binary",
     srcs = ["main.swift"],
+    visibility = ["//visibility:public"],
     deps = ["@com_github_keith_swift_syntax//:SwiftSyntax"],
 )
 
