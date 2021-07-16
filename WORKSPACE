@@ -39,3 +39,10 @@ apple_support_dependencies()
 load("//:deps.bzl", "swift_syntax_deps")
 
 swift_syntax_deps()
+
+http_archive(
+    name = "foo",
+    sha256 = "c84962b64d9ae4472adfb01ec2cf1aa73cb2ee8308242add55fa7cc38602d882",
+    build_file = "@//:FakeExternal.BUILD",
+    url = "https://github.com/bazelbuild/rules_apple/releases/download/0.31.2/rules_apple.0.31.2.tar.gz",
+)
