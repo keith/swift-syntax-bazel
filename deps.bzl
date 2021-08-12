@@ -8,8 +8,8 @@ def swift_syntax_deps():
 
     http_archive(
         name = "com_github_keith_lib_internalswiftsyntaxparser",
-        sha256 = "65566d949ecefa8156d0097a24b8213fff3bc6c0e26f2ee299b655357682613e",
-        urls = ["https://github.com/keith/lib_InternalSwiftSyntaxParser/releases/download/12.5.12E262/lib_InternalSwiftSyntaxParser.dylib.zip"],
+        sha256 = "5f7bdaa05fe3f6da62de5e21dbe849d4619ea268aa4a7c0ad2cde3360f555dbd",
+        url = "https://github.com/keith/lib_InternalSwiftSyntaxParser/releases/download/13.0.13A5212g/lib_InternalSwiftSyntaxParser.dylib.zip",
         build_file_content = """
 filegroup(
     name = "library",
@@ -22,7 +22,8 @@ filegroup(
     http_archive(
         name = "com_github_keith_swift_syntax",
         build_file = "@com_github_keith_swift_syntax_bazel//:SwiftSyntax.BUILD",
-        sha256 = "a1ad87076794f2fd3edb016ffcb9f49de5a0cf1323809c60400753279ef510ba",
-        strip_prefix = "swift-syntax-0.50400.0",
-        url = "https://github.com/apple/swift-syntax/archive/0.50400.0.tar.gz",
+        sha256 = "d766397f890a9b9a439bf850f4294d64a979085fa29c07a19e56ff833c9ec07a",
+        strip_prefix = "swift-syntax-593d01f4017cf8b71ec28689629f7b9a6739df0b",
+        # Point in time from the release/5.5 branch, should be updated to the tag once it exists
+        url = "https://github.com/apple/swift-syntax/archive/593d01f4017cf8b71ec28689629f7b9a6739df0b.tar.gz",
     )
