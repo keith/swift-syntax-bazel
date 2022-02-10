@@ -3,11 +3,11 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def swift_syntax_deps():
     """Fetches dependencies of SwiftSyntax"""
-    if not native.existing_rule("build_bazel_rules_swift"):
-        fail("error: this depends on rules_swift but that wasn't setup")
-
     if not native.existing_rule("build_bazel_rules_apple"):
         fail("error: this depends on rules_apple but that wasn't setup")
+
+    if not native.existing_rule("build_bazel_rules_swift"):
+        fail("error: this depends on rules_swift but that wasn't setup")
 
     http_archive(
         name = "StaticInternalSwiftSyntaxParser",
