@@ -1,5 +1,4 @@
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
-load("@com_github_keith_swift_syntax_bazel//:cc_import_workaround.bzl", "cc_import_workaround")
 
 cc_library(
     name = "_CSwiftSyntax",
