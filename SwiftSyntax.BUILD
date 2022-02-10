@@ -9,17 +9,14 @@ cc_library(
     tags = ["swift_module"],
 )
 
-cc_import(
-    name = "library",
-    shared_library = "@com_github_keith_lib_internalswiftsyntaxparser//:library",
-)
-
 swift_library(
     name = "SwiftSyntax",
     srcs = glob(["Sources/SwiftSyntax/**/*.swift"]),
     module_name = "SwiftSyntax",
     private_deps = ["_CSwiftSyntax"] + select({
-        "@platforms//os:macos": ["library"],
+        "@platforms//os:macos": [
+            "@StaticInternalSwiftSyntaxParser//:lib_InternalSwiftSyntaxParser",
+        ],
         "//conditions:default": [],
     }),
     visibility = ["//visibility:public"],
