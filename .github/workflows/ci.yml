@@ -17,8 +17,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v1
-      - uses: fwal/setup-swift@d43a564349d1341cd990cfbd70d94d63b8899475
+      - uses: fwal/setup-swift@b5f579654904ef9a49e1b51e4bff6bd1b9b49224
         with:
           swift-version: "5.5.2"
+      - name: Get swift version
+        run: swift --version
       - name: test
         run: CC=clang bazelisk test --build_tests_only //test:swift_binary_test //test:swift_test
