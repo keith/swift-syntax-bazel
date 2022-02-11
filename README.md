@@ -2,17 +2,16 @@
 
 This repo provides a bazel target for
 [`SwiftSyntax`](https://github.com/apple/swift-syntax). Most importantly
-it handles vendoring `lib_InternalSwiftSyntaxParser` so your tool
-doesn't depend on the specific Xcode path (or version) of your users.
+it handles vendoring `lib_InternalSwiftSyntaxParser` as a static library
+so your tool doesn't depend on a specific Xcode.app path or version.
 
 ## Usage
 
 1. Make sure you've setup
-   [`rules_swift`](https://github.com/bazelbuild/rules_swift). Then add
-   this to your `WORKSPACE`
+   [`rules_apple`](https://github.com/bazelbuild/rules_apple)
 2. Go to the [releases
    page](https://github.com/keith/swift-syntax-bazel/releases) to grab
-   the snippet for the Xcode version you want
+   the WORKSPACE snippet for the Xcode version you're using
 3. Add this target to your `deps`:
 
 ```bzl
@@ -31,14 +30,7 @@ binary would end up with a `rpath` like this:
 ```
 
 This meant if you used a remote bazel cache in your builds, everyone's
-Xcode path would have to match for this to work correctly. With this
-repo, and using bazel's
-[`cc_import`](https://docs.bazel.build/versions/main/be/c-cpp.html#cc_import)
-to depend on the library, you end up with a `rpath` that is relative,
-and points into bazel's execroot:
-
-```
-@loader_path/../../_solib_darwin_x86_64/_U@com_Ugithub_Ukeith_Uswift_Usyntax_S_S_Clibrary___U
-```
-
-Meaning it will be portable across machines.
+Xcode path would have to match for this to work correctly. This repo
+links [a static
+binary](https://github.com/keith/StaticInternalSwiftSyntaxParser) for
+`lib_InternalSwiftSyntaxParser` instead.

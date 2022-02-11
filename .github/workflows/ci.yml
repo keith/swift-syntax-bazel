@@ -1,0 +1,26 @@
+name: Bazel Build
+
+on: [pull_request]
+
+jobs:
+  macos-test:
+    name: macOS test
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v1
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_13.2.app
+      - name: test
+        run: bazelisk test //...
+  linux-test:
+    name: Linux test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: fwal/setup-swift@b5f579654904ef9a49e1b51e4bff6bd1b9b49224
+        with:
+          swift-version: "5.5.2"
+      - name: Get swift version
+        run: swift --version
+      - name: test
+        run: CC=clang bazelisk test --build_tests_only //test:swift_binary_test //test:swift_test
