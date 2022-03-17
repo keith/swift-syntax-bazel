@@ -1,1 +1,4 @@
 build --test_output=errors
+
+# TODO: Remove once https://github.com/bazelbuild/rules_swift/issues/775 is fixed
+build --swiftcopt=-wmo --host_swiftcopt=-wmo

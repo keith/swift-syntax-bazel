@@ -1,5 +1,5 @@
 import XCTest
-import SwiftSyntax
+import SwiftSyntaxParser
 
 final class TestLoad: XCTestCase {
     func testNoThrows() {

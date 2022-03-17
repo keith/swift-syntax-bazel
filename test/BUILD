@@ -5,14 +5,14 @@ swift_test(
     name = "swift_test",
     size = "small",
     srcs = ["swift_test.swift"],
-    deps = ["@com_github_keith_swift_syntax//:SwiftSyntax"],
+    deps = ["@com_github_keith_swift_syntax//:SwiftSyntaxParser"],
 )
 
 swift_binary(
     name = "swift_binary",
     srcs = ["main.swift"],
     visibility = ["//visibility:public"],
-    deps = ["@com_github_keith_swift_syntax//:SwiftSyntax"],
+    deps = ["@com_github_keith_swift_syntax//:SwiftSyntaxParser"],
 )
 
 sh_test(
@@ -26,7 +26,7 @@ swift_library(
     name = "macos_test_library",
     srcs = ["macos_test_library.swift"],
     tags = ["manual"],
-    deps = ["@com_github_keith_swift_syntax//:SwiftSyntax"],
+    deps = ["@com_github_keith_swift_syntax//:SwiftSyntaxParser"],
 )
 
 macos_unit_test(
@@ -40,7 +40,7 @@ swift_library(
     name = "macos_binary_main",
     srcs = ["main.swift"],
     tags = ["manual"],
-    deps = ["@com_github_keith_swift_syntax//:SwiftSyntax"],
+    deps = ["@com_github_keith_swift_syntax//:SwiftSyntaxParser"],
 )
 
 macos_command_line_application(
