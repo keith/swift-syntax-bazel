@@ -21,3 +21,19 @@ swift_library(
     }),
     visibility = ["//visibility:public"],
 )
+
+swift_library(
+    name = "SwiftSyntaxParser",
+    srcs = glob(["Sources/SwiftSyntaxParser/**/*.swift"]),
+    module_name = "SwiftSyntaxParser",
+    visibility = ["//visibility:public"],
+    deps = [":SwiftSyntax"],
+)
+
+swift_library(
+    name = "SwiftSyntaxBuilder",
+    srcs = glob(["Sources/SwiftSyntaxBuilder/**/*.swift"]),
+    module_name = "SwiftSyntaxBuilder",
+    visibility = ["//visibility:public"],
+    deps = [":SwiftSyntax"],
+)
