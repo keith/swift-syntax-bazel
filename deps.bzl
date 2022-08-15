@@ -14,14 +14,17 @@ def swift_syntax_deps():
 
     http_archive(
         name = "StaticInternalSwiftSyntaxParser",
-        url = "https://github.com/keith/StaticInternalSwiftSyntaxParser/releases/download/5.7-beta5/lib_InternalSwiftSyntaxParser.xcframework.zip",
-        sha256 = "52f6eb8af2519e7d42298bb874670d788b95f599ff023c449a34cfe20d04c702",
+        url = "https://github.com/keith/StaticInternalSwiftSyntaxParser/releases/download/5.7-beta5-fix/lib_InternalSwiftSyntaxParser.xcframework.zip",
+        sha256 = "272468a50ae7d479b78ed924d677510c73fa872ebb55fe39e031f29d38a3c8d6",
         build_file_content = """
 load("@build_bazel_rules_apple//apple:apple.bzl", "apple_static_framework_import")
 
 apple_static_framework_import(
     name = "lib_InternalSwiftSyntaxParser",
-    framework_imports = ["lib_InternalSwiftSyntaxParser.xcframework/macos-arm64_x86_64/lib_InternalSwiftSyntaxParser.framework/lib_InternalSwiftSyntaxParser"],
+    framework_imports = glob(
+        ["lib_InternalSwiftSyntaxParser.xcframework/macos-arm64_x86_64/lib_InternalSwiftSyntaxParser.framework/**"],
+        allow_empty = False,
+    ),
     visibility = ["//visibility:public"],
 )
 """,

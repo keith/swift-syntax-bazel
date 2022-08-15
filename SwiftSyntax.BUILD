@@ -26,6 +26,12 @@ swift_library(
     name = "SwiftSyntaxParser",
     srcs = glob(["Sources/SwiftSyntaxParser/**/*.swift"]),
     module_name = "SwiftSyntaxParser",
+    private_deps = select({
+        "@platforms//os:macos": [
+            "@StaticInternalSwiftSyntaxParser//:lib_InternalSwiftSyntaxParser",
+        ],
+        "//conditions:default": [],
+    }),
     visibility = ["//visibility:public"],
     deps = [":SwiftSyntax"],
 )
