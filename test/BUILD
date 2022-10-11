@@ -5,6 +5,7 @@ swift_test(
     name = "swift_test",
     size = "small",
     srcs = ["swift_test.swift"],
+    copts = ["-parse-as-library"],
     deps = ["@com_github_keith_swift_syntax//:SwiftParser"],
 )
 
