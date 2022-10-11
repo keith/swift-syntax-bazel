@@ -1,14 +1,19 @@
 import XCTest
-import SwiftSyntaxParser
+import SwiftParser
 
 final class TestLoad: XCTestCase {
     func testNoThrows() {
-        _ = try! SyntaxParser.parse(source: "/dev/null")
+        _ = try! Parser.parse(source: "/dev/null")
     }
 }
 
 #if os(Linux)
-XCTMain([
-    testCase([("testNoThrows", TestLoad.testNoThrows)])
-])
+@main
+struct MainWrapper {
+    static func main() {
+        XCTMain([
+                testCase([("testNoThrows", TestLoad.testNoThrows)])
+        ])
+    }
+}
 #endif
