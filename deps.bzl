@@ -14,8 +14,8 @@ def swift_syntax_deps():
 
     http_archive(
         name = "StaticInternalSwiftSyntaxParser",
-        url = "https://github.com/keith/StaticInternalSwiftSyntaxParser/releases/download/5.7/lib_InternalSwiftSyntaxParser.xcframework.zip",
-        sha256 = "99803975d10b2664fc37cc223a39b4e37fe3c79d3d6a2c44432007206d49db15",
+        url = "https://github.com/keith/StaticInternalSwiftSyntaxParser/releases/download/5.7.1/lib_InternalSwiftSyntaxParser.xcframework.zip",
+        sha256 = "feb332ba0a027812b1ee7f552321d6069a46207e5cd0f64fa9bb78e2a261b366",
         build_file_content = """
 load("@build_bazel_rules_apple//apple:apple.bzl", "apple_static_framework_import")
 
@@ -33,7 +33,7 @@ apple_static_framework_import(
     http_archive(
         name = "com_github_keith_swift_syntax",
         build_file = "@com_github_keith_swift_syntax_bazel//:SwiftSyntax.BUILD",
-        sha256 = "d652af27b8a986d8fe4967292839374e06e3a962382318eaf00e0278746b6a41",
-        strip_prefix = "swift-syntax-swift-5.7-DEVELOPMENT-SNAPSHOT-2022-08-30-a",
-        url = "https://github.com/apple/swift-syntax/archive/refs/tags/swift-5.7-DEVELOPMENT-SNAPSHOT-2022-08-30-a.tar.gz",
+        sha256 = "ea96dcd129ed4a05ea0efd7dbe39d929d47c55b1b5b8c2c7a8fce5c7de0bc4d8",
+        strip_prefix = "swift-syntax-0.50700.1",
+        url = "https://github.com/apple/swift-syntax/archive/refs/tags/0.50700.1.tar.gz",
     )
