@@ -1,8 +1,8 @@
 import XCTest
-import SwiftSyntaxParser
+import SwiftParser
 
 final class TestLoad: XCTestCase {
     func testNoThrows() {
-        _ = try! SyntaxParser.parse(source: "/dev/null")
+        _ = try! Parser.parse(source: "/dev/null")
     }
 }
