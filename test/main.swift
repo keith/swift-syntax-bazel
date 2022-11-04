@@ -1,3 +1,3 @@
 import SwiftParser
 
-_ = try! Parser.parse(source: "/dev/null")
+_ = Parser.parse(source: "/dev/null")
