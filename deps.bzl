@@ -8,8 +8,8 @@ def swift_syntax_deps():
 
     http_archive(
         name = "com_github_keith_swift_syntax",
-        sha256 = "6a748d2118a5865116ccd1b099b566f6754514d7ecb83413e1cc2c46b5faa619",
+        sha256 = "c1447afe703924ac26a86510140a8bde9b6ce1d10594c2e07f49c52a01562476",
         build_file = "@com_github_keith_swift_syntax_bazel//:SwiftSyntax.BUILD",
-        strip_prefix = "swift-syntax-1bf320abf560142ce29967328033ae04d447774f",
-        url = "https://github.com/apple/swift-syntax/archive/1bf320abf560142ce29967328033ae04d447774f.tar.gz",
+        strip_prefix = "swift-syntax-e1f771ea8ad8bc172de766e0963a76aeb7b08cef",
+        url = "https://github.com/apple/swift-syntax/archive/e1f771ea8ad8bc172de766e0963a76aeb7b08cef.tar.gz",
     )

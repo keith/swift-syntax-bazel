@@ -2,8 +2,8 @@ import XCTest
 import SwiftParser
 
 final class TestLoad: XCTestCase {
-    func testNoThrows() {
-        _ = try! Parser.parse(source: "/dev/null")
+    func testParse() {
+        _ = Parser.parse(source: "/dev/null")
     }
 }
 
@@ -12,7 +12,7 @@ final class TestLoad: XCTestCase {
 struct MainWrapper {
     static func main() {
         XCTMain([
-                testCase([("testNoThrows", TestLoad.testNoThrows)])
+                testCase([("testParse", TestLoad.testParse)])
         ])
     }
 }
