@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v1
-      - uses: fwal/setup-swift@286618643423cd7921459c230b7cd8a96c9c7a10
+      - uses: fwal/setup-swift@c451d2c490688d7bd069157d895c9102738937d3
         with:
           swift-version: "5.7.1"
       - name: Get swift version
