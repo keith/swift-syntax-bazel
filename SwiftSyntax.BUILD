@@ -11,7 +11,10 @@ cc_library(
 
 swift_library(
     name = "SwiftSyntax_lib",
-    srcs = glob(["Sources/SwiftSyntax/**/*.swift"]),
+    srcs = glob(
+        ["Sources/SwiftSyntax/**/*.swift"],
+        exclude = ["**/*.docc/**"],
+    ),
     module_name = "SwiftSyntax",
     private_deps = ["_CSwiftSyntax"],
 )
@@ -26,21 +29,30 @@ opt_wrapper(
 
 swift_library(
     name = "SwiftBasicFormat",
-    srcs = glob(["Sources/SwiftBasicFormat/**/*.swift"]),
+    srcs = glob(
+        ["Sources/SwiftBasicFormat/**/*.swift"],
+        exclude = ["**/*.docc/**"],
+    ),
     module_name = "SwiftBasicFormat",
     deps = [":SwiftSyntax_lib"],
 )
 
 swift_library(
     name = "SwiftDiagnostics",
-    srcs = glob(["Sources/SwiftDiagnostics/**/*.swift"]),
+    srcs = glob(
+        ["Sources/SwiftDiagnostics/**/*.swift"],
+        exclude = ["**/*.docc/**"],
+    ),
     module_name = "SwiftDiagnostics",
     deps = [":SwiftSyntax_lib"],
 )
 
 swift_library(
     name = "SwiftParser_lib",
-    srcs = glob(["Sources/SwiftParser/**/*.swift"]),
+    srcs = glob(
+        ["Sources/SwiftParser/**/*.swift"],
+        exclude = ["**/*.docc/**"],
+    ),
     module_name = "SwiftParser",
     deps = [
         ":SwiftBasicFormat",
@@ -59,7 +71,10 @@ opt_wrapper(
 
 swift_library(
     name = "SwiftSyntaxBuilder_lib",
-    srcs = glob(["Sources/SwiftSyntaxBuilder/**/*.swift"]),
+    srcs = glob(
+        ["Sources/SwiftSyntaxBuilder/**/*.swift"],
+        exclude = ["**/*.docc/**"],
+    ),
     module_name = "SwiftSyntaxBuilder",
     deps = [
         ":SwiftBasicFormat",
@@ -78,7 +93,10 @@ opt_wrapper(
 
 swift_library(
     name = "SwiftOperators_lib",
-    srcs = glob(["Sources/SwiftOperators/**/*.swift"]),
+    srcs = glob(
+        ["Sources/SwiftOperators/**/*.swift"],
+        exclude = ["**/*.docc/**"],
+    ),
     module_name = "SwiftOperators",
     deps = [
         ":SwiftDiagnostics",
