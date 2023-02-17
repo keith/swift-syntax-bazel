@@ -87,7 +87,7 @@ opt_wrapper(
     name = "SwiftSyntaxBuilder",
     visibility = ["//visibility:public"],
     deps = [
-        ":SwiftSyntaxBuilder_libSwiftParser_lib",
+        ":SwiftSyntaxBuilder_lib",
     ],
 )
 
