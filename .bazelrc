@@ -1,3 +1,5 @@
+common --incompatible_disallow_empty_glob
+
 build --test_output=errors
 
 # TODO: Remove once https://github.com/bazelbuild/rules_swift/issues/775 is fixed
