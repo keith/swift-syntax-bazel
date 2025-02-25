@@ -14,7 +14,7 @@ jobs:
         run: bazelisk test //...
   linux-test:
     name: Linux test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v1
       - uses: swift-actions/setup-swift@v2
