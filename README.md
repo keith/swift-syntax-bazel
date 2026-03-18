@@ -5,6 +5,10 @@ This repo provides a bazel target for
 it handles vendoring `lib_InternalSwiftSyntaxParser` as a static library
 so your tool doesn't depend on a specific Xcode.app path or version.
 
+**DEPRECATED** Since https://github.com/swiftlang/swift/commit/2d07f382c5a51834b63273539a2dd9e6a7ae6ea2 / https://github.com/swiftlang/swift-syntax/commit/ca5326ad072aafb51909f4ebe4ede38eb7b918d1
+this is no longer needed! You can now build `swift-syntax` directly
+from the BCR in bazel without having to worry about any non-hermetic dylibs.
+
 ## Usage
 
 1. Make sure you've setup
